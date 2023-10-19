@@ -75,10 +75,10 @@ public class Sistema {
 
                 case 1:
                     venderProduto(sc,produtoInfo);
-
+                    break;
                 case 2:
                     System.out.println("***Escolha o serviço a ser Agendado***");
-                    System.out.println("1: Banho, 2: Tosa, 3: Consulta Veterinária");
+                    System.out.println("1: Banho R$:25.00, 2: Tosa R$:40.00 ,  3: Consulta Veterinária R$:100.00");
                     int escolhaServico = sc.nextInt();
                     sc.nextLine();
 
@@ -107,8 +107,8 @@ public class Sistema {
                                 Agenda agenda = new Agenda(nomeBanho, servicoBanho, dataBanho, horarioBanho);
                                 Agenda.lista.add(agenda);
                                 System.out.println("Serviço Agendado com sucesso!!");
-                            }
-                            break;
+                            } break;
+
                         case 2: // Tosa
                             System.out.print("Informe o nome do animal: ");
                             String nomeTosa = sc.nextLine();
@@ -146,8 +146,6 @@ public class Sistema {
                                 System.out.println("Horário Indisponível. Escolha um novo horário por favor!");
                             }
                             break;
-
-
                         default:
                             System.out.println("Opção INVALIDA");
                     }
@@ -157,11 +155,8 @@ public class Sistema {
                         System.out.println("Nenhum Serviço solicitado");
                     } else {
                         for (Agenda agendamento : Agenda.agendaList()) {
-                            agendamento.getAnimal();
-                            agendamento.getServicos();
-                            agendamento.getData();
-                            agendamento.getHorario();
-                            System.out.println("" + agendamento.toString());
+
+                            System.out.println( agendamento.toString());
                         }
                     }
 
@@ -222,11 +217,11 @@ public class Sistema {
                     System.out.println("-------------------------------------------------------");
                     System.out.println();
                     System.out.print("Insira a quantidade de produtos a serem cadastrados: ");
-                    int n = sc.nextInt();
-                    for(int i = 0; i < n; i++) {
+                    int n1 = sc.nextInt();
+                    sc.nextLine();
+                    for(int i = 0; i < n1; i++) {
                         System.out.println("Informe o tipo do produto: 1 - Ração Cães, 2 - Ração Gatos," +
                                 "3-Brinquedos em Geral");
-                        sc.nextLine();
                         System.out.print("Digite uma opção: ");
                        int escolhaTipo = sc.nextInt();
                         sc.nextLine();
@@ -240,55 +235,80 @@ public class Sistema {
                                     case 1:
                                         listaProdutos.add(new Produto("Ração Golden Cães", "Ração",
                                                 139.99, 100));
+                                        System.out.println("Ração Golden Cães, Ração,R$:139.99, " +
+                                                "Entrada no Estoque: 100 unds");
                                         break;
                                     case 2:
                                         listaProdutos.add(new Produto("Ração DogChow", "Ração",
                                                 160.99, 50));
+                                        System.out.println("Ração DogChow, Ração,R$:160.99," +
+                                                " Entrada no Estoque: 50 unds");
                                         break;
                                     case 3:
                                         listaProdutos.add(new Produto("Ração Nero - Carne", "Ração",
                                                 89.99, 30));
+                                        System.out.println("Ração Whiskas, Ração,R$:190.99, " +
+                                                "Entrada no Estoque: 50 unds");
                                         break;
                                     default:
                                         System.out.println("Lamento, porem só trabalhamos com as opções oferecidas.");
                                 }
                         break;
                             case 2:
-                                System.out.println("Ração para Cães, trabalhamos com 3 tipos: 1.Golden Gatos, " +
+                                System.out.println("Ração para Gatos, trabalhamos com 3 tipos: 1.Golden Gatos, " +
                                         "2.Whiskas e 3.Nutrilus");
                                 int racaoGato = sc.nextInt();
                                 switch (racaoGato){
                                     case 1:
                                         listaProdutos.add(new Produto("Ração Golden Gatos", "Ração",
                                                 153.99, 110));
+                                        System.out.println("Ração Golden Gatos, Ração,R$:153.99," +
+                                                " Entrada no Estoque: 110 unds");
                                         break;
                                     case 2:
                                         listaProdutos.add(new Produto("Ração Whiskas", "Ração",
                                                 190.99, 50));
+                                        System.out.println("Ração Whiskas, Ração,R$:190.99, " +
+                                                "Entrada no Estoque: 50 unds");
+
+
                                         break;
                                     case 3:
                                         listaProdutos.add(new Produto("Ração Nutrilus", "Ração",
                                                 160.99, 200));
+                                        System.out.println("Ração Nutrilus, Ração,R$:160.99, " +
+                                                "Entrada no Estoque: 200 unds");
+
                                         break;
                                     default:
                                         System.out.println("Lamento, porem só trabalhamos com as opções oferecidas.");
                                 }
+                                break;
                             case 3:
                                 System.out.println("Brinquedos para pet's temos: ");
-                                listaProdutos.add(new Produto("Brinquedo Bola com Corda", "Brinquedo",
-                                        59.99, 100));
-                                listaProdutos.add(new Produto("Ossos Mastigável", "Brinquedo",
-                                        30.99, 100));
-                            break;
+                                System.out.print("1-Brinquedo Bola com Corda; 2-Brinquedo Ossos Mastigáveis: ");
+                                int escBrinquedo = sc.nextInt();
+                                        sc.nextLine();
+                                switch (escBrinquedo) {
+                                    case 1:
+                                    listaProdutos.add(new Produto("Brinquedo Bola com Corda", "Brinquedo",
+                                            59.99, 100));
+                                        System.out.println("Brinquedo Bola com Corda, Brinquedo,R$:59.99," +
+                                                " Entrada no Estoque: 100 unds");
+                                    break;
+                                    case 2:
+                                    listaProdutos.add(new Produto("Ossos Mastigáveis", "Brinquedo",
+                                            30.99, 100));
+                                        System.out.println("Ossos Mastigáveis, Brinquedo,R$:30.99," +
+                                                " Entrada no Estoque: 100 unds");
+                                    break;
+                                }
+                                break;
                             default:
                                 System.out.println("Retorne ao menu, e escolha outra opção.");
 
 
                     }
-
-
-
-
                     }
 
                     System.out.println("Produtos Definidos em sua respetiva categoria");
@@ -347,17 +367,17 @@ public class Sistema {
                         case 1:
                             novoservicos = new Banho();
                             servicos.add(novoservicos);
-                            System.out.println("Serviço cadastrado ");
+                            System.out.println("Serviço: "+novoservicos.getNome() +" cadastrado: Preço do Serviço "+"R$:"+novoservicos.preco()+"0.Descrição:"+novoservicos.descricao());
                             break;
                         case 2:
                             novoservicos = new Tosa();
                             servicos.add(novoservicos);
-                            System.out.println("Serviço cadastrado ");
+                            System.out.println("Serviço: "+novoservicos.getNome() +" cadastrado: Preço do Serviço "+"R$:"+novoservicos.preco()+"0.Descrição:"+novoservicos.descricao());
                             break;
                         case 3:
                             novoservicos = new ConsultaVeterinaria();
                             servicos.add(novoservicos);
-                            System.out.println("Serviço cadastrado ");
+                            System.out.println("Serviço: "+novoservicos.getNome() +" cadastrado: Preço do Serviço "+"R$:"+novoservicos.preco()+"0.Descrição:"+novoservicos.descricao());
                             break;
                         default:
                             System.out.println("Opção inválida");
