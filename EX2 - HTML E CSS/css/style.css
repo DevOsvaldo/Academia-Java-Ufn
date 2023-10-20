@@ -1,0 +1,148 @@
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container1{
+  position: relative;
+  margin-left:150px ;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.div{
+    
+    margin-bottom: 5px;
+    width: 250px;
+    height: 50px;
+    
+   
+
+}
+.d1{
+  background-color: blue;
+}
+.d2{
+  background-color: red;
+}
+.d3{
+  background-color: green;
+}
+.d4{
+  background-color: purple;
+}
+
+
+.container2{
+  border: 1px solid transparent;
+  width: 550px;
+  height: 500px;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.blocos{
+  width:150px ;
+  height: 80px;
+  padding: 15px;
+  text-align: center;
+  padding: 25px;
+}
+#left-top{
+  left: 40px;
+  position: absolute;  
+  background-color: blue;
+  justify-content:flex-end;
+}
+#right-top{
+  position: absolute;
+  right: 40px;
+  background-color: purple;
+}
+#left-bottom{
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  background-color:red;
+}
+#right-bottom{
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  background-color: green;
+}
+
+.container3{
+  position: relative;
+  border: 1px solid transparent;
+  width: 500px;
+  height: 400px;
+  margin-bottom: 40px;
+}
+.divR{
+  border-radius: 50%;
+  width: 180px;
+  height: 60px;
+  padding: 15px;
+  text-align: center;
+}
+
+.container4{
+  margin-top: 20px;
+  padding: 25px;
+}
+.mini-borda{
+  border: 2px solid green;
+  width: 260px;
+  height: 170px;
+  padding: 4px 5px 4px 3px;
+
+}
+.item{
+    margin-bottom: 5px;
+    width: 250px;
+    height: 50px;
+    background-color: gray;
+    padding: 10px;
+    color: yellow;
+    font-size: 18px;
+}
+.it2:hover{
+  cursor: pointer;
+  background-color: yellow;
+  
+}
+.container5{
+  border: 1px solid transparent;
+  display: flex;
+  background-color: rgb(191, 211, 190);
+  color: white;
+  font-weight: bold;
+  width: 600px;
+  margin-bottom: 50px;
+}
+
+/*
+
+reponsividade container 1:
+container1: flex-wrap->wrap/display:flex
+h1:display -> none
+
+
+resp container 2::after
+flex-wrap
+width:100%;
+h1:display none
+divs-> remover o position absolute
+
+
+
+
+
+
+
+
