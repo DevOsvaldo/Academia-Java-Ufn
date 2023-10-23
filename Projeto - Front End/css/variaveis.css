@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --brand-color:#6C63FF;
+  --brand-color-light:#D7D4FF;
+  --dark-10:#2A2A2A;
+  --dark-20:#555555;
+  --dark-30:#F9F9F9;
+  --dark-40:#FFFFFF;
+  --support-01:#2962FF;
+  --support-02:#0BB07B;
+  --suport-03:#FFCE52;
+  --support-04:#F03D3D;
+  --support-05:#E0E0E0;
+  --font-family-primal:'Merriweather', serif;
+  --font-family-second:'Lato', sans-serif;
+}
+.bgred{
+  background-color:#FF6363;;
+}
+.bgblue {
+  background: #63ECFF;
+}
+.bgpink{
+  background: #F363FF;
+}
+
+.bggreen {
+  background: #63FF73;
+}
+.bgyellow{
+  background: #FFDD63;
+}.bgdarkblue {
+  background: #6663FF;
+}
+
