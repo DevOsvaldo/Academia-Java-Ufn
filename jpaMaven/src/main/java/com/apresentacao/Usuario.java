@@ -1,28 +1,40 @@
 package com.apresentacao;
 
 import javax.persistence.*;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
+@Table(name="Usuarios")
 @Entity
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id_usuario;
+    Integer id;
+
     String nome;
+
     String endereco;
+
     String email;
+
     String telefone;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_administracao", updatable = false, insertable = false)
     private Administracao administracao;
     public Usuario() {
+
     }
-    public Usuario(Integer id_usuario, String nome, String endereco, String email, String telefone, Administracao administracao ) {
+
+    public Usuario(String nome, String endereco, String email, String telefone) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.email = email;
+        this.telefone = telefone;
+    }
+
+    public Usuario(Integer id, String nome, String endereco, String email, String telefone, Administracao administracao ) {
         super();
-        this.id_usuario = id_usuario;
+        this.id = id;
         this.nome = nome;
         this.endereco = endereco;
         this.email = email;
@@ -30,12 +42,12 @@ public class Usuario implements Serializable {
         this.administracao = administracao;
     }
 
-    public Integer getId_paciente() {
-        return id_usuario;
+    public Integer getId() {
+        return id;
     }
 
-    public void setId_paciente(Integer id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setId(Integer id_usuario) {
+        this.id = id_usuario;
     }
 
     public String getNome() {
@@ -80,12 +92,12 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "Paciente{" +
-                "id_usuario=" + id_usuario +
-                ", nome='" + nome + '\'' +
-                ", endereço='" + endereco + '\'' +
-                ", email='" + email + '\'' +
-                ", telefone='" + telefone + '\'' +
-                '}';
+        return "Usuário{" +
+                "id:" + id +
+                ", nome:" + nome +
+                ", endereço:" + endereco +
+                ", email:" + email +
+                ", telefone:" + telefone +
+                ", Setor: "+getAdministracao()+'}';
     }
 }
