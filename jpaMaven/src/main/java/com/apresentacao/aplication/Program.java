@@ -191,53 +191,6 @@ public class Program {
 
     }
 
-
-/*
-    public static  void consultar(){
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Informe o id da consulta: ");
-        int id = scan.nextInt();
-        scan.nextLine();
-        try {
-            EntityManager em = JPAUtil.getEntityManager();
-            Query query = em.createNativeQuery("SELECT usuarios.nome as Nome_do_Usuario, administracao.nome as Classificacao FROM Usuarios\n" +
-                    "INNER JOIN Administracao ON Administracao.id = Usuarios.administracao_id\n" +
-                    "WHERE Administracao.id = " + id);
-            List<Object[]> resultList = query.getResultList();
-            List<ArmazenadorDadosDTO> dtos = new ArrayList<>();
-
-            for (Object[] result : resultList) {
-                String usuarioNome = (String) result[0];
-                String administracaoNome = (String) result[1];
-
-
-                ArmazenadorDadosDTO dto = new ArmazenadorDadosDTO();
-                dto.setAdministracaoNome(administracaoNome);
-                dto.setUsuarioNome(usuarioNome);
-
-
-                dtos.add(dto);
-            }
-
-            if (resultList.isEmpty()) {
-                System.out.println("Consulta Invalida ou Banco de Dados vazio!");
-            } else {
-                for (ArmazenadorDadosDTO dto : dtos) {
-                    String userName = dto.getUsuarioNome();
-                    String classificacao = dto.getAdministracaoNome();
-
-                    System.out.println("Nome do Usuário: " + userName);
-                    System.out.println("Classificação: " + classificacao);
-                    System.out.println("--------------------");
-                }
-            }
-
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }*/
-
     public static void alterarDados() {
         Scanner scan = new Scanner(System.in);
         int opcaoMenu;
