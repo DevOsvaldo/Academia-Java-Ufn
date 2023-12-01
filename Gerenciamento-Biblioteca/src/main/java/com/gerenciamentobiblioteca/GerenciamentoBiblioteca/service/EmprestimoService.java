@@ -32,9 +32,11 @@ public class EmprestimoService {
     }
 
     public Emprestimo realizarEmprestimo(Long alunoId, Long livroId) {
-        Livro livro = livroRepository.findById(livroId).orElseThrow(() -> new RuntimeException("Problema na busca, livro id: "
+        Livro livro = livroRepository.findById(livroId).orElseThrow(() ->
+                new RuntimeException("Problema na busca, livro id: "
                 + livroId + "não encontrado!"));
-        Aluno aluno = alunoRepository.findById(alunoId).orElseThrow(() -> new RuntimeException("Problema na busca, aluno id: "
+        Aluno aluno = alunoRepository.findById(alunoId).orElseThrow(() ->
+                new RuntimeException("Problema na busca, aluno id: "
                 + alunoId + "não encontrado!"));
 
         if (livro.getStatusLivro() == SituacaoLivro.DISPONIVEL) {
@@ -61,6 +63,7 @@ public class EmprestimoService {
         if (emprestimo.getDataDevolucao() != null) {
             throw new RuntimeException("Livro devolvido!");
         }
+
         emprestimo.setSituacaoEmprestimo(SituacaoEmprestimo.DEVOLVIDO);
         emprestimo.setDataDevolucao(LocalDate.now());
 

@@ -45,14 +45,20 @@ public class LivroController {
 
     @PostMapping
     public @ResponseBody String createLivro(@RequestParam String titulo, @RequestParam String autor,
-                                            @RequestParam String isbn, @RequestParam String situacaoLivro){
+                                            @RequestParam String isbn,@RequestParam Integer anoDePublicacao, @RequestParam String situacaoLivro){
         Livro livro = new Livro();
         livro.setTitulo(titulo);
         livro.setAutor(autor);
         livro.setIsbn(isbn);
+        livro.setAnoDePublicacao(anoDePublicacao);
         livro.setStatusLivro(SituacaoLivro.valueOf(situacaoLivro));
         livroService.saveLivro(livro);
         return "salvo";
+    }
+    //Sem passar por parametro
+    @PostMapping
+    public Livro createNewLivro(@RequestBody Livro livro) {
+        return livroService.saveLivro(livro);
     }
 
     @PutMapping("/{id}")
@@ -65,6 +71,3 @@ public class LivroController {
     }
 
 }
-    /*public Livro createNewLivro(@RequestBody Livro livro) {
-        return livroService.saveLivro(livro);
-    }*/
