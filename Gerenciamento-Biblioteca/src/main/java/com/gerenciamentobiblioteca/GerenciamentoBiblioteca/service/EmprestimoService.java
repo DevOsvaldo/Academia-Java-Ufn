@@ -63,7 +63,6 @@ public class EmprestimoService {
         if (emprestimo.getDataDevolucao() != null) {
             throw new RuntimeException("Livro devolvido!");
         }
-
         emprestimo.setSituacaoEmprestimo(SituacaoEmprestimo.DEVOLVIDO);
         emprestimo.setDataDevolucao(LocalDate.now());
 
