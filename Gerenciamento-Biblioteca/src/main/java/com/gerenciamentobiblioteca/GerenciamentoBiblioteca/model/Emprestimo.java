@@ -26,6 +26,11 @@ public class Emprestimo {
     private LocalDate dataEmprestimo;
     @Temporal(TemporalType.DATE)
     private LocalDate dataDevolucao;
+    @Column(name = "data_devolucao_esperada")
+    @Temporal(TemporalType.DATE)
+    private LocalDate dataDevolucaoEsperada;
+    @Column(name = "Multa")
+    private double multa;
     @Enumerated(EnumType.STRING)
     private SituacaoEmprestimo situacaoEmprestimo;
 

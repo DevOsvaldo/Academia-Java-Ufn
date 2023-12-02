@@ -31,4 +31,7 @@ public class Livro {
     @Enumerated(EnumType.STRING)
     private SituacaoLivro statusLivro;
 
+    public void atualizarStatusParaDisponivel(){
+        this.statusLivro = SituacaoLivro.DISPONIVEL;
+    }
 }

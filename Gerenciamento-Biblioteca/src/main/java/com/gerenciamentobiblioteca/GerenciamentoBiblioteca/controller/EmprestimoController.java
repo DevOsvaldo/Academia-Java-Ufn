@@ -1,12 +1,14 @@
 package com.gerenciamentobiblioteca.GerenciamentoBiblioteca.controller;
 
 import com.gerenciamentobiblioteca.GerenciamentoBiblioteca.model.Emprestimo;
+import com.gerenciamentobiblioteca.GerenciamentoBiblioteca.model.Livro;
 import com.gerenciamentobiblioteca.GerenciamentoBiblioteca.service.EmprestimoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -30,9 +32,9 @@ public class EmprestimoController {
     }
     @PutMapping("/devolverlivro/{emprestimoId}")
     @ResponseStatus(code = HttpStatus.OK)
-    public Emprestimo devolverLivro(@PathVariable Long emprestimoId) {
+    public Emprestimo devolverLivro(@PathVariable Long emprestimoId, @RequestParam LocalDate dataDevolucao) {
 
-       return emprestimoService.devolverLivro(emprestimoId);
+       return emprestimoService.devolverLivro(emprestimoId, dataDevolucao);
 
 
     }
